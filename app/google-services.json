@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1784547887",
+    "project_id": "make-it-up"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1784547887:android:8fb8d29f2cc5c929",
+        "android_client_info": {
+          "package_name": "com.natura.teste.thaissantos.makeitup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1784547887-le24gue23p4lvjp8dqg03llokmg5t2bt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.natura.teste.thaissantos.makeitup",
+            "certificate_hash": "c25efb8182ef2b4628759d2b9f450b7ce563a913"
+          }
+        },
+        {
+          "client_id": "1784547887-nuidf26stf5deqdc08brjsr74c3vp36b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgH92d6Esn5HZUe9TUdnQw2yMpydSRL-8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
