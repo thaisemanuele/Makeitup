@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String name =  extras.getString("name");
 
-        db.populate();
+        db.populate(db.productFactory());
 
         TextView welcome = (TextView) findViewById(R.id.textView) ;
         welcome.setText("Bem Vindo, "+name);
