@@ -19,6 +19,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static String CATALOG_TABLE_NAME = "catalog";
     private static String CATALOG_COLUMN_ID = "id";
     private static String CATALOG_COLUMN_NAME = "name";
+    private static String CATALOG_COLUMN_DESC = "colordesc";
     private static String CATALOG_COLUMN_COLOR_R = "color_r";
     private static String CATALOG_COLUMN_COLOR_G = "color_g";
     private static String CATALOG_COLUMN_COLOR_B = "color_b";
@@ -32,7 +33,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL( "create table catalog " +
-                    "(id text primary key, name text, color_r integer, " +
+                    "(id text primary key, name text, colordesc text, color_r integer, " +
                     "color_g integer, color_b integer, category text, url_image text)");
     }
 
@@ -49,6 +50,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         contentValues.put("id", product.getId());
         contentValues.put("name", product.getName());
+        contentValues.put("colordesc", product.getColorDesc());
         contentValues.put("color_r", product.getColor_r());
         contentValues.put("color_g", product.getColor_g());
         contentValues.put("color_b", product.getColor_b());
@@ -87,49 +89,49 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         List<Product> products = new LinkedList<Product>();
 
-        products.add( new Product("PO_COMP_AQ_40", "Pó Compacto Aquarela - Bege Claro",
+        products.add( new Product("PO_COMP_AQ_40", "Pó Compacto Aquarela" , "Bege Claro",
                 236,199,155,Category.PO,"http://www.natura.com.br/sites/default/files/products/38729-1.jpg"));
 
-        products.add( new Product("PO_COMP_AQ_42", "Pó Compacto Aquarela - Bege Rosado",
+        products.add( new Product("PO_COMP_AQ_42", "Pó Compacto Aquarela" , "Bege Rosado",
                 249,196,164,Category.PO,"http://www.natura.com.br/sites/default/files/products/38731-1.jpg"));
 
-        products.add( new Product("PO_COMP_AQ_44", "Pó Compacto Aquarela - Bege Medio",
+        products.add( new Product("PO_COMP_AQ_44", "Pó Compacto Aquarela" , "Bege Medio",
                 229,186,135,Category.PO,"http://www.natura.com.br/sites/default/files/products/38730-1.jpg"));
 
-        products.add( new Product("PO_COMP_AQ_46", "Pó Compacto Aquarela - Bege Castanho",
+        products.add( new Product("PO_COMP_AQ_46", "Pó Compacto Aquarela" , "Bege Castanho",
                 202,144,104,Category.PO,"http://www.natura.com.br/sites/default/files/products/38733-1.jpg"));
 
-        products.add( new Product("PO_COMP_AQ_48", "Pó Compacto Aquarela - Marrom Claro",
+        products.add( new Product("PO_COMP_AQ_48", "Pó Compacto Aquarela" , "Marrom Claro",
                 167,119,105,Category.PO, "http://www.natura.com.br/sites/default/files/products/38732-1.jpg"));
 
-        products.add( new Product("PO_COMP_AQ_50", "Pó Compacto Aquarela - Marrom Escuro",
+        products.add( new Product("PO_COMP_AQ_50", "Pó Compacto Aquarela" , "Marrom Escuro",
                 158,112,89, Category.PO, "http://www.natura.com.br/sites/default/files/products/38728-1.jpg"));
 
-        products.add( new Product("PO_COMP_FAC_MED", "Pó Compacto Faces - Médio",
+        products.add( new Product("PO_COMP_FAC_MED", "Pó Compacto Faces" , "Médio",
                 249,145,110,Category.PO, "http://www.natura.com.br/sites/default/files/products/77644-0.jpg"));
 
-        products.add( new Product("PO_COMP_FAC_CAS", "Pó Compacto Faces - Castanho",
+        products.add( new Product("PO_COMP_FAC_CAS", "Pó Compacto Faces" , "Castanho",
                 207,126,96, Category.PO, "http://www.natura.com.br/sites/default/files/products/77645-0.jpg"));
 
-        products.add( new Product("PO_COMP_FAC_CLA", "Pó Compacto Faces - Claro",
+        products.add( new Product("PO_COMP_FAC_CLA", "Pó Compacto Faces" , "Claro",
                 253,201,154,Category.PO, "http://www.natura.com.br/sites/default/files/products/77646-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_COB", "Batom Metalizado FPS8 Aquarela - Cobre",
+        products.add( new Product("BAT_MET_AQ_COB", "Batom Metalizado FPS8 Aquarela" , "Cobre",
                 109,45,16, Category.BATM, "http://www.natura.com.br/sites/default/files/products/79012-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_UVA", "Batom Metalizado FPS8 Aquarela - Uva",
+        products.add( new Product("BAT_MET_AQ_UVA", "Batom Metalizado FPS8 Aquarela" , "Uva",
                 109,45,16, Category.BATM, "http://www.natura.com.br/sites/default/files/products/79011-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_VIN", "Batom Metalizado FPS8 Aquarela - Vinho",
+        products.add( new Product("BAT_MET_AQ_VIN", "Batom Metalizado FPS8 Aquarela" , "Vinho",
                 140,33,61,  Category.BATM, "http://www.natura.com.br/sites/default/files/products/79010-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_GRFT", "Batom Metalizado FPS8 Aquarela - Grafite",
+        products.add( new Product("BAT_MET_AQ_GRFT", "Batom Metalizado FPS8 Aquarela" , "Grafite",
                 56,63,71,  Category.BATM, "http://www.natura.com.br/sites/default/files/products/79009-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_VERM", "Batom Metalizado FPS8 Aquarela - Vermelho",
+        products.add( new Product("BAT_MET_AQ_VERM", "Batom Metalizado FPS8 Aquarela" , "Vermelho",
                 142,33,43,  Category.BATM, "http://www.natura.com.br/sites/default/files/products/79008-0.jpg"));
 
-        products.add( new Product("BAT_MET_AQ_PINK", "Batom Metalizado FPS8 Aquarela - Pink",
+        products.add( new Product("BAT_MET_AQ_PINK", "Batom Metalizado FPS8 Aquarela" , "Pink",
                 175,72,120,  Category.BATM, "http://www.natura.com.br/sites/default/files/products/79007-0.jpg"));
 
         return products;

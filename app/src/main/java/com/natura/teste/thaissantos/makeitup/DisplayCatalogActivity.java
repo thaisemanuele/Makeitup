@@ -28,23 +28,33 @@ public class DisplayCatalogActivity extends AppCompatActivity {
         int greenvalue = (int )extras.get("g");
         int bluevalue =  (int )extras.get("b");
 
-        Cursor products = dbhelper.getProducts(redvalue, greenvalue, bluevalue, 45);
-        ArrayList<String> productsList = new ArrayList<String>();
+        Cursor products = dbhelper.getProducts(redvalue, greenvalue, bluevalue, 40);
+        ArrayList<Product> productsList = new ArrayList<Product>();
         if(products.isAfterLast()){
             Toast.makeText(this, "Não Encontrado! Mostrando todas opções", Toast.LENGTH_LONG).show();
             products = dbhelper.getAllProducts();
         }
         while(products.moveToNext()){
+
             String id = products.getString(products.getColumnIndex("id"));
             String name = products.getString(products.getColumnIndex("name"));
-            productsList.add(id+" "+name);
+            String color_desc = products.getString(products.getColumnIndex("colordesc"));
+
+            int color_r = products.getInt(products.getColumnIndex("color_r"));
+            int color_g = products.getInt(products.getColumnIndex("color_g"));
+            int color_b = products.getInt(products.getColumnIndex("color_b"));
+
+            Category category = Category.NOTFOUND.getByDescription(products.getString(products.getColumnIndex("category")));
+            String url_image = products.getString(products.getColumnIndex("url_image"));
+
+            Product product = new Product(id, name, color_desc, color_r, color_g, color_b, category, url_image);
+            productsList.add(product);
         }
 
 
         ListView listView = (ListView) findViewById(R.id.productsList);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+        ProductListAdapter arrayAdapter = new ProductListAdapter (
                 this,
-                android.R.layout.simple_list_item_1,
                 productsList );
 
         listView.setAdapter(arrayAdapter);

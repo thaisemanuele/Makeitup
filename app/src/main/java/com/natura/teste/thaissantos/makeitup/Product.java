@@ -12,9 +12,10 @@ public class Product {
     private int color_g;
     private int color_b;
     private Category category;
+    private String colorDesc;
     private String url_image;
 
-    public Product(String id, String name, int color_r, int color_g, int color_b, Category category, String url_image) {
+    public Product(String id, String name, String colorDesc, int color_r, int color_g, int color_b, Category category, String url_image) {
         this.id = id;
         this.name = name;
         this.color_r = color_r;
@@ -22,6 +23,8 @@ public class Product {
         this.color_b = color_b;
         this.category = category;
         this.url_image = url_image;
+        this.colorDesc = colorDesc;
+
     }
 
     public String getId() {
@@ -78,5 +81,13 @@ public class Product {
 
     public void setUrl_image(String url_image) {
         this.url_image = url_image;
+    }
+
+    public String getColorDesc() {
+        return colorDesc;
+    }
+
+    public void setColorDesc(String colorDesc) {
+        this.colorDesc = colorDesc;
     }
 }
