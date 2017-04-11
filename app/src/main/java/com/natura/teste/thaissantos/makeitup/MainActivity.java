@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     float ratioX = imView.getWidth()/ bitmap.getWidth();
                     float ratioY = imView.getHeight()/ bitmap.getHeight();
                     float[] pts = {
-                            event.getX()- imgBounds.left , event.getY()- imgBounds.top
+                            event.getX() , event.getY()
                     };
                     int pixel =0;
                     Double posX = ratioX == 0 ? Double.valueOf(pts[0]): Double.valueOf(pts[0]/ratioX);

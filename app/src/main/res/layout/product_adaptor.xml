@@ -39,10 +39,12 @@
 
         <Button
             android:id="@+id/product_buy"
-            android:layout_width="197dp"
+            android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:text="VIsitar Página" />
+            android:background="@android:color/holo_orange_light"
+            android:text="Comprar"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 </LinearLayout>
