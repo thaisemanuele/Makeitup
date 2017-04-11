@@ -16,6 +16,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteX="-4dp"
         tools:layout_editor_absoluteY="0dp" />
 </android.support.constraint.ConstraintLayout>
